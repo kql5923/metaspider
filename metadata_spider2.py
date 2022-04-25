@@ -1,5 +1,5 @@
 #########################################################
-# METADATA SPIDER 1.0     | CSEC 471 - METADATA PROJECT #
+# METADATA SPIDER 2.0     | CSEC 471 - METADATA PROJECT #
 # Kenyon Litt                                           #
 #########################################################
 from curses import meta
