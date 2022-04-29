@@ -1,5 +1,5 @@
 ####################################################################################
-# METADATA SPIDER 3.5     |                   CSEC 471 - METADATA PROJECT          #
+# METADATA SPIDER 3.6     |                   CSEC 471 - METADATA PROJECT          #
 # Written by (and authorized user) : Kenyon Litt                                   #
 #  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - #
 # Script custom written for The Happy Co, using against this                       #
@@ -145,6 +145,7 @@ class Page:
         dirname = dirname.replace(':', '')
         dirname = dirname.replace('?','')
         dirname = dirname.replace('=','')
+        dirname = dirname[0:50] # only first 50 chars for path
         path = str(os.getcwd()) + '\data\\' + FILE_NAME_TIME + '\\' +  dirname + "\\"
         prtstr = ' Dwonloading to path ' + path 
         info_print('function_info', 'page-download_data()', prtstr)
@@ -158,6 +159,7 @@ class Page:
             filename = filename.replace('//', '')
             filename = filename.replace(';','')
             filename = filename.replace('.','')
+            filename = filename[0:60] # Only grab first 60 chars for name
             resp = requests.head(each_imagelink[1])
             contentType = resp.headers['content-type']
             filetype = ''
